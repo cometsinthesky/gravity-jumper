@@ -11,13 +11,15 @@ window.onload = function () {
     const gravityValues = {
         Lua: 0.16,
         Terra: 0.98,
+        Mercúrio: 0.38,
+        Vênus: 0.91,
         Marte: 0.38,
         Júpiter: 2.53,
         Saturno: 1.07,
         Urano: 0.89,
         Netuno: 1.14,
         Plutão: 0.06,
-        Sol: 27.94
+        Sol: 27.94,
     };
     
     let gravity = gravityValues.Terra;
