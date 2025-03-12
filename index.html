@@ -32,9 +32,41 @@
 
         #graphImg {
             position: fixed; /* Usar 'fixed' para fixar a imagem em relação à janela */
-            bottom: 100px; /* Posiciona 100px acima da borda inferior da tela */
+            bottom: 80px; /* Posiciona 100px acima da borda inferior da tela */
             left: 2%; /* Centraliza horizontalmente */
             width: 37%; /* Ajusta a largura para 100% da largura da tela */
+            height: auto; /* Mantém a proporção da imagem */
+        }
+
+        #tabelaImg {
+            position: fixed; /* Usar 'fixed' para fixar a imagem em relação à janela */
+            top: 10px; /* Posiciona 100px acima da borda inferior da tela */
+            right: -4%; /* Centraliza horizontalmente */
+            width: 33%; /* Ajusta a largura para 100% da largura da tela */
+            height: auto; /* Mantém a proporção da imagem */
+        }
+
+        #formulaImg {
+            position: fixed; /* Usar 'fixed' para fixar a imagem em relação à janela */
+            top: 300px; /* Posiciona 100px acima da borda inferior da tela */
+            right: 8%; /* Centraliza horizontalmente */
+            width: 8%; /* Ajusta a largura para 100% da largura da tela */
+            height: auto; /* Mantém a proporção da imagem */
+        }
+
+        #formula2Img {
+            position: fixed; /* Usar 'fixed' para fixar a imagem em relação à janela */
+            top: 420px; /* Posiciona 100px acima da borda inferior da tela */
+            right: 6%; /* Centraliza horizontalmente */
+            width: 11%; /* Ajusta a largura para 100% da largura da tela */
+            height: auto; /* Mantém a proporção da imagem */
+        }
+
+        #hrefImg {
+            position: fixed; /* Usar 'fixed' para fixar a imagem em relação à janela */
+            top: 490px; /* Posiciona 100px acima da borda inferior da tela */
+            right: 1%; /* Centraliza horizontalmente */
+            width: 20%; /* Ajusta a largura para 100% da largura da tela */
             height: auto; /* Mantém a proporção da imagem */
         }
 
@@ -43,9 +75,12 @@
 <body>
     <h1>Gravity Jumper</h1>
     <script src="game.js"></script>
-    <img id="luaImg" src="images/lua.png" alt="Lua" />
-    <img id="graphImg" src="images/grafico.png" alt="Lua" />
-    
+    <img id="luaImg" src="images/lua.png" alt="Superfície da Lua" />
+    <img id="graphImg" src="images/grafico.png" alt="Gráfico da altura do salto" />
+    <img id="tabelaImg" src="images/tabela.png" alt="Tabela aceleração gravitacional" />
+    <img id="formulaImg" src="images/formula.png" alt="Fórmula da altura máxima vertical" />
+    <img id="formula2Img" src="images/formula2.png" alt="Fórmula da velocidade" />
+    <img id="hrefImg" src="images/href.png" alt="Altura de referência para h" />
 
     <script>
         // Impede o comportamento da tecla "Espaço" (barra de rolagem) no navegador
