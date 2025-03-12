@@ -20,13 +20,22 @@
             overflow: hidden; /* Impede a rolagem da página */
         }
 
-                /* Imagem da Lua */
-                #luaImg {
-            position: absolute;
-            bottom: -220px; /* 100px abaixo da borda inferior do canvas */
+        /* Imagem da Lua */
+        #luaImg {
+            position: fixed; /* Usar 'fixed' para fixar a imagem em relação à janela */
+            bottom: -220px; /* Posiciona 100px acima da borda inferior da tela */
             left: 50%; /* Centraliza horizontalmente */
             transform: translateX(-50%); /* Ajusta para garantir o centro exato */
-            width: 100%; /* Ajuste da largura conforme necessário */
+            width: 100vw; /* Ajusta a largura para 100% da largura da tela */
+            height: auto; /* Mantém a proporção da imagem */
+        }
+
+        #graphImg {
+            position: fixed; /* Usar 'fixed' para fixar a imagem em relação à janela */
+            bottom: 100px; /* Posiciona 100px acima da borda inferior da tela */
+            left: 2%; /* Centraliza horizontalmente */
+            width: 37%; /* Ajusta a largura para 100% da largura da tela */
+            height: auto; /* Mantém a proporção da imagem */
         }
 
     </style>
@@ -35,6 +44,7 @@
     <h1>Gravity Jumper</h1>
     <script src="game.js"></script>
     <img id="luaImg" src="images/lua.png" alt="Lua" />
+    <img id="graphImg" src="images/grafico.png" alt="Lua" />
     
 
     <script>
