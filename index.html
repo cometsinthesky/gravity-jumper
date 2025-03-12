@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> </title>
+    <title>Gravity Jumper</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
         body {
@@ -15,13 +15,35 @@
             background-color: black;
             color: white;
             font-family: 'Roboto', sans-serif;
-            font-size: 22px;
+            font-size: 20px;
             flex-direction: column;
+            overflow: hidden; /* Impede a rolagem da página */
         }
+
+                /* Imagem da Lua */
+                #luaImg {
+            position: absolute;
+            bottom: -220px; /* 100px abaixo da borda inferior do canvas */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translateX(-50%); /* Ajusta para garantir o centro exato */
+            width: 100%; /* Ajuste da largura conforme necessário */
+        }
+
     </style>
 </head>
 <body>
     <h1>Gravity Jumper</h1>
     <script src="game.js"></script>
+    <img id="luaImg" src="images/lua.png" alt="Lua" />
+    
+
+    <script>
+        // Impede o comportamento da tecla "Espaço" (barra de rolagem) no navegador
+        window.addEventListener('keydown', function(event) {
+            if (event.code === 'Space') {
+                event.preventDefault();  // Impede o comportamento padrão
+            }
+        });
+    </script>
 </body>
 </html>

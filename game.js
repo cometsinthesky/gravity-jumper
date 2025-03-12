@@ -21,7 +21,7 @@ window.onload = function () {
     };
     
     let gravity = gravityValues.Terra;
-    const jumpPower = -8;
+    const jumpPower = -7.5;
 
     let stickman = {
         x: canvas.width / 2,
@@ -34,9 +34,9 @@ window.onload = function () {
         const container = document.createElement("div");
         container.style.position = "absolute";
         container.style.top = "10px";
-        container.style.left = "10px";
+        container.style.left = "15px";
         container.style.color = "white";
-        container.style.fontSize = "18px";
+        container.style.fontSize = "16px";
 
         for (const planet in gravityValues) {
             const label = document.createElement("label");
