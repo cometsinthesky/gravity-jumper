@@ -89,8 +89,20 @@ window.onload = function () {
         ctx.arc(x, y - 20, 10, 0, Math.PI * 2); // Cabeça
         ctx.moveTo(x, y - 10);
         ctx.lineTo(x, y + 20); // Corpo
-        ctx.moveTo(x - 15, y);
-        ctx.lineTo(x + 15, y); // Braços
+        
+        // Braços: se estiver no chão, os braços estão para baixo, se estiver pulando, os braços estão para cima
+        if (stickman.vy < 0) { // Durante o pulo, braços para cima
+            ctx.moveTo(x - 10, y - 10); // Braço esquerdo
+            ctx.lineTo(x - 20, y - 25); // Braço esquerdo para cima
+            ctx.moveTo(x + 10, y - 10); // Braço direito
+            ctx.lineTo(x + 20, y - 25); // Braço direito para cima
+        } else { // Quando no solo, braços para baixo
+            ctx.moveTo(x - 10, y); // Braço esquerdo
+            ctx.lineTo(x - 20, y + 10); // Braço esquerdo para baixo
+            ctx.moveTo(x + 10, y); // Braço direito
+            ctx.lineTo(x + 20, y + 10); // Braço direito para baixo
+        }
+        
         ctx.moveTo(x, y + 20);
         ctx.lineTo(x - 10, y + 40); // Perna esquerda
         ctx.moveTo(x, y + 20);
@@ -98,9 +110,39 @@ window.onload = function () {
         ctx.stroke();
     }
 
+    function drawArrow(x, y, length, color, direction = "up") {
+        // Desenha um vetor com estilo de flecha
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        if (direction === "up") {
+            ctx.moveTo(x, y);
+            ctx.lineTo(x, y - length); // Linha para cima
+            // Desenhando a ponta da flecha
+            ctx.moveTo(x - 5, y - length + 5);
+            ctx.lineTo(x, y - length);
+            ctx.lineTo(x + 5, y - length + 5);
+        } else if (direction === "down") {
+            ctx.moveTo(x, y);
+            ctx.lineTo(x, y + length); // Linha para baixo
+            // Desenhando a ponta da flecha
+            ctx.moveTo(x - 5, y + length - 5);
+            ctx.lineTo(x, y + length);
+            ctx.lineTo(x + 5, y + length - 5);
+        }
+        ctx.stroke();
+    }
+
+    function drawVectors(x, y) {
+        // Vetor da aceleração da gravidade (vermelho)
+        const gravityVectorLength = Math.abs(stickman.vy) * 5; // Multiplicamos para visualizar a aceleração
+        drawArrow(x, y, gravityVectorLength, "red", "down");
+    }
+
     function gameLoop() {
         update();
         drawStickman(stickman.x, stickman.y);
+        drawVectors(stickman.x, stickman.y);
         requestAnimationFrame(gameLoop);
     }
 
