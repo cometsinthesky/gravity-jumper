@@ -11,7 +11,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 115vh;
             background-color: black;
             color: white;
             font-family: 'Roboto', sans-serif;
@@ -23,7 +23,7 @@
         /* Imagem da Lua */
         #luaImg {
             position: fixed; /* Usar 'fixed' para fixar a imagem em relação à janela */
-            bottom: -220px; /* Posiciona 100px acima da borda inferior da tela */
+            bottom: -20vh; /* Posiciona 100px acima da borda inferior da tela */
             left: 50%; /* Centraliza horizontalmente */
             transform: translateX(-50%); /* Ajusta para garantir o centro exato */
             width: 100vw; /* Ajusta a largura para 100% da largura da tela */
@@ -32,48 +32,57 @@
 
         #graphImg {
             position: fixed; /* Usar 'fixed' para fixar a imagem em relação à janela */
-            bottom: 80px; /* Posiciona 100px acima da borda inferior da tela */
-            left: 2%; /* Centraliza horizontalmente */
-            width: 37%; /* Ajusta a largura para 100% da largura da tela */
+            bottom: 20vh; /* Posiciona 100px acima da borda inferior da tela */
+            left: 1vw; /* Centraliza horizontalmente */
+            width: 36vw; /* Ajusta a largura para 100% da largura da tela */
             height: auto; /* Mantém a proporção da imagem */
         }
 
         #tabelaImg {
             position: fixed; /* Usar 'fixed' para fixar a imagem em relação à janela */
-            top: 10px; /* Posiciona 100px acima da borda inferior da tela */
-            right: -4%; /* Centraliza horizontalmente */
-            width: 33%; /* Ajusta a largura para 100% da largura da tela */
+            top: 1vh; /* Posiciona 100px acima da borda inferior da tela */
+            right: -4vw; /* Centraliza horizontalmente */
+            width: 33vw; /* Ajusta a largura para 100% da largura da tela */
             height: auto; /* Mantém a proporção da imagem */
         }
 
         #formulaImg {
             position: fixed; /* Usar 'fixed' para fixar a imagem em relação à janela */
-            top: 300px; /* Posiciona 100px acima da borda inferior da tela */
-            right: 8%; /* Centraliza horizontalmente */
-            width: 8%; /* Ajusta a largura para 100% da largura da tela */
+            top: 39vh; /* Posiciona 100px acima da borda inferior da tela */
+            right: 8vw; /* Centraliza horizontalmente */
+            width: 8vw; /* Ajusta a largura para 100% da largura da tela */
             height: auto; /* Mantém a proporção da imagem */
         }
 
         #formula2Img {
             position: fixed; /* Usar 'fixed' para fixar a imagem em relação à janela */
-            top: 420px; /* Posiciona 100px acima da borda inferior da tela */
-            right: 6%; /* Centraliza horizontalmente */
-            width: 11%; /* Ajusta a largura para 100% da largura da tela */
+            top: 54.5vh; /* Posiciona 100px acima da borda inferior da tela */
+            right: 6vw; /* Centraliza horizontalmente */
+            width: 11vw; /* Ajusta a largura para 100% da largura da tela */
             height: auto; /* Mantém a proporção da imagem */
         }
 
         #hrefImg {
             position: fixed; /* Usar 'fixed' para fixar a imagem em relação à janela */
-            top: 490px; /* Posiciona 100px acima da borda inferior da tela */
-            right: 1%; /* Centraliza horizontalmente */
-            width: 20%; /* Ajusta a largura para 100% da largura da tela */
+            top: 65vh; /* Posiciona 100px acima da borda inferior da tela */
+            right: 1vw; /* Centraliza horizontalmente */
+            width: 20vw; /* Ajusta a largura para 100% da largura da tela */
+            height: auto; /* Mantém a proporção da imagem */
+        }
+
+        #reguaImg {
+            opacity: 40%;
+            position: fixed; /* Usar 'fixed' para fixar a imagem em relação à janela */
+            bottom: 11.6vh; /* Posiciona 100px acima da borda inferior da tela */
+            right: 37.5vw; /* Centraliza horizontalmente */
+            width: 13.15vw; /* Ajusta a largura para 100% da largura da tela */
             height: auto; /* Mantém a proporção da imagem */
         }
 
     </style>
 </head>
 <body>
-    <h1>Gravity Jumper</h1>
+    <h1 style="position: fixed; margin: 5px; padding: 0px; top: 5vh; left: 50%; transform: translateX(-50%);">Gravity Jumper</h1>
     <script src="game.js"></script>
     <img id="luaImg" src="images/lua.png" alt="Superfície da Lua" />
     <img id="graphImg" src="images/grafico.png" alt="Gráfico da altura do salto" />
@@ -81,6 +90,7 @@
     <img id="formulaImg" src="images/formula.png" alt="Fórmula da altura máxima vertical" />
     <img id="formula2Img" src="images/formula2.png" alt="Fórmula da velocidade" />
     <img id="hrefImg" src="images/href.png" alt="Altura de referência para h" />
+    <img id="reguaImg" src="images/regua.png" alt="Régua que mede a altura do salto" />
 
     <script>
         // Impede o comportamento da tecla "Espaço" (barra de rolagem) no navegador

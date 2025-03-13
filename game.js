@@ -1,11 +1,13 @@
 window.onload = function () {
-    alert("- Aperte a tecla espaço para pular.");
+    alert("- Aperte a tecla espaço para pular. Coloque no modo Tela Cheia (F11).");
 
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     document.body.appendChild(canvas);
     canvas.width = 800;
-    canvas.height = 600;
+    canvas.height = 800;
+    canvas.style.position = 'fixed';  // Garante que o canvas não se mova com o scroll
+    canvas.style.zIndex = 9999;  // Define que o canvas ficará sobre outros elementos
     document.body.style.backgroundColor = "black";
 
     const gravityValues = {
@@ -23,7 +25,7 @@ window.onload = function () {
     };
     
     let gravity = gravityValues.Terra;
-    const jumpPower = -7.5;
+    const jumpPower = -8;
 
     let stickman = {
         x: canvas.width / 2,
@@ -35,8 +37,8 @@ window.onload = function () {
     function createGravitySelector() {
         const container = document.createElement("div");
         container.style.position = "absolute";
-        container.style.top = "10px";
-        container.style.left = "15px";
+        container.style.top = "2vh";
+        container.style.left = "1vw";
         container.style.color = "white";
         container.style.fontSize = "16px";
 
@@ -72,8 +74,8 @@ window.onload = function () {
         stickman.vy += gravity; 
         stickman.y += stickman.vy;
         
-        if (stickman.y >= canvas.height - 100) {
-            stickman.y = canvas.height - 100;
+        if (stickman.y >= canvas.height - 150) {
+            stickman.y = canvas.height - 150;
             stickman.vy = 0;
             stickman.grounded = true;
         }
